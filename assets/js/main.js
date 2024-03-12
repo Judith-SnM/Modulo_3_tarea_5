@@ -35,7 +35,7 @@ const radiologias = [
         prevision: "FONASA"
     },
 ]
-const tarumatologias = [
+const traumatologias = [
     {
         hora: "8:00",
         especialista: "MARIA PAZ ALTUZARRA",
@@ -131,3 +131,48 @@ const dentales = [
     }
 ];
 
+const radiologia = document.querySelector(`#radiologias`)
+const traumatologia = document.querySelector(`#traumatologias`)
+const dental = document.querySelector(`#dentales`)
+
+radiologia.textContent = `Primera atención: ${radiologias[0].paciente} - ${radiologias[0].prevision}| Última atención: ${radiologias[radiologias.length - 1].paciente} - ${radiologias[radiologias.length - 1].prevision}`
+
+const tablaradiologia = document.querySelector(`#tablaradiologias`)
+for (const items of radiologias) {
+    tablaradiologia.innerHTML += `
+    <tr>
+    <td>${items.hora}</td>
+    <td>${items.especialista}</td>
+    <td>${items.paciente}</td>
+    <td>${items.rut}</td>
+    <td>${items.prevision}</td>
+    </tr>
+`
+}
+traumatologia.textContent = `Primera atención: ${traumatologias[0].paciente} - ${traumatologias[0].prevision}| Última atención: ${traumatologias[traumatologias.length - 1].paciente} - ${traumatologias[traumatologias.length - 1].prevision}`
+const tablatraumatologias = document.querySelector(`#tablatraumatologias`)
+for (const items of traumatologias) {
+    tablatraumatologias.innerHTML += `
+    <tr>
+    <td>${items.hora}</td>
+    <td>${items.especialista}</td>
+    <td>${items.paciente}</td>
+    <td>${items.rut}</td>
+    <td>${items.prevision}</td>
+    </tr>
+`
+}
+
+dental.textContent = `Primera atención: ${dentales[0].paciente} - ${dentales[0].prevision}| Última atención: ${dentales[dentales.length - 1].paciente} - ${dentales[dentales.length - 1].prevision}`
+const tabladentales = document.querySelector(`#tabladentales`)
+for (const items of dentales) {
+    tabladentales.innerHTML += `
+    <tr>
+    <td>${items.hora}</td>
+    <td>${items.especialista}</td>
+    <td>${items.paciente}</td>
+    <td>${items.rut}</td>
+    <td>${items.prevision}</td>
+    </tr>
+`
+}
